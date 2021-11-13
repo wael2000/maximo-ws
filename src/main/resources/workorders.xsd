@@ -1,0 +1,53 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+           targetNamespace="http://spring.io/guides/gs-producing-web-service" elementFormDefault="qualified">
+
+    <xs:element name="getWorkorderRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="wonum" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getWorkorderResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="workorder" type="tns:workorder"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="workorder">
+        <xs:sequence>
+            <xs:element name="wonum" type="xs:string"/>
+            <xs:element name="woid" type="xs:int"/>
+            <xs:element name="siteid" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="getCcbcaseRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="wonum" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCcbcaseResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ccbcase" type="tns:ccbcase"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="ccbcase">
+        <xs:sequence>
+            <xs:element name="wonum" type="xs:string"/>
+            <xs:element name="lang" type="xs:string"/>
+            <xs:element name="caseid" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+
+</xs:schema>
